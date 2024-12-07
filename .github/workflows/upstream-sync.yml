@@ -23,5 +23,5 @@ jobs:
       - name: Merge Upstream Changes
         run: |
           git checkout master
-          git merge upstream/master --no-edit
+          git merge upstream/master --no-edit  --allow-unrelated-histories 
           git push origin master
