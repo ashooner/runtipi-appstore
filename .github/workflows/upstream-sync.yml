@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Fork
         uses: actions/checkout@v3
         with:
-          ref: main  # Replace with your fork's default branch
+          ref: master
 
       - name: Add Upstream Remote
         run: |
