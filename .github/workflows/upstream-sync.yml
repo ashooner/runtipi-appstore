@@ -1,9 +1,9 @@
-name: Scheduled Upstream Sync
+name: Upstream Sync
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Daily at midnight UTC
-  workflow_dispatch: # Allow manual triggering
+    - cron: '0 0 * * *'  # Runs daily
+  workflow_dispatch: # Manual run support
 
 jobs:
   sync:
@@ -13,15 +13,20 @@ jobs:
       - name: Checkout Fork
         uses: actions/checkout@v3
         with:
-          ref: master
+          ref: master  # Use your default branch
+
+      - name: Configure Git User
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Action Bot"
 
       - name: Add Upstream Remote
         run: |
-          git remote add upstream https://github.com/runtipi/runtipi-appstore.git
+          git remote add upstream https://github.com/source/repo.git
           git fetch upstream
 
       - name: Merge Upstream Changes
         run: |
           git checkout master
-          git merge upstream/master --no-edit  --allow-unrelated-histories 
+          git merge upstream/master --allow-unrelated-histories --no-edit
           git push origin master
