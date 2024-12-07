@@ -22,7 +22,7 @@ jobs:
 
       - name: Add Upstream Remote
         run: |
-          git remote add upstream https://github.com/source/repo.git
+          git remote add upstream https://github.com/runtipi/runtipi-appstore.git
           git fetch upstream
 
       - name: Merge Upstream Changes
