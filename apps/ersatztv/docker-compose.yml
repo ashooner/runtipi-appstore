@@ -6,7 +6,7 @@ services:
     container_name: ersatztv
     volumes:
       - ${APP_DATA_DIR}/data/config:/root/.local/share/ersatztv
-      - ${ROOT_FOLDER_HOST}/media/data:media/data:ro
+      - ${ROOT_FOLDER_HOST}/media/data:/media/data:ro
     environment:
       - PUID=1000
       - PGID=1000
