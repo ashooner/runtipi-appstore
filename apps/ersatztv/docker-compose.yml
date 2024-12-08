@@ -1,0 +1,44 @@
+version: "3.7"
+
+services:
+  ersatztv:
+    image: jasongdove/ersatztv:v0.8.8-nvidia
+    container_name: ersatztv
+    volumes:
+      - ${APP_DATA_DIR}/data/config:/root/.local/share/ersatztv
+      - ${ROOT_FOLDER_HOST}/media/data:media/data:ro
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    restart: "unless-stopped"
+    ports:
+      - ${APP_PORT}:8409
+    networks:
+      - tipi_main_network
+    labels:
+      # Main
+      traefik.enable: true
+      traefik.http.middlewares.ersatztv-web-redirect.redirectscheme.scheme: https
+      traefik.http.services.ersatztv.loadbalancer.server.port: 8409
+      # Web
+      traefik.http.routers.ersatztv-insecure.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.ersatztv-insecure.entrypoints: web
+      traefik.http.routers.ersatztv-insecure.service: ersatztv
+      traefik.http.routers.ersatztv-insecure.middlewares: ersatztv-web-redirect
+      # Websecure
+      traefik.http.routers.ersatztv.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.ersatztv.entrypoints: websecure
+      traefik.http.routers.ersatztv.service: ersatztv
+      traefik.http.routers.ersatztv.tls.certresolver: myresolver
+      # Local domain
+      traefik.http.routers.ersatztv-local-insecure.rule: Host(`ersatztv.${LOCAL_DOMAIN}`)
+      traefik.http.routers.ersatztv-local-insecure.entrypoints: web
+      traefik.http.routers.ersatztv-local-insecure.service: ersatztv
+      traefik.http.routers.ersatztv-local-insecure.middlewares: ersatztv-web-redirect
+      # Local domain secure
+      traefik.http.routers.ersatztv-local.rule: Host(`ersatztv.${LOCAL_DOMAIN}`)
+      traefik.http.routers.ersatztv-local.entrypoints: websecure
+      traefik.http.routers.ersatztv-local.service: ersatztv
+      traefik.http.routers.ersatztv-local.tls: true
+      runtipi.managed: true

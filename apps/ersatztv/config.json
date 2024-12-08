@@ -1,0 +1,17 @@
+{
+  "name": "ErsatzTV",
+  "id": "ersatztv",
+  "available": true,
+  "short_desc": "Stream custom live channels using your own media.",
+  "author": "Jason Dove",
+  "port": 8409,
+  "categories": ["media"],
+  "description": "ErsatzTV is beta software for configuring and streaming custom live channels using your media library. The software may be unstable and is under active development.",
+  "tipi_version": 1,
+  "version": "v0.8.8-nvidia",
+  "source": "https://github.com/ErsatzTV/ErsatzTV",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1724134338800,
+  "updated_at": 1724134338800
+}
