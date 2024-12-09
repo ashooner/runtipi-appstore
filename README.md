@@ -20,7 +20,7 @@ If you want to see new apps on Tipi you can either:
 - [Join the Discord](https://discord.gg/Bu9qEPnHsc) members of the community will add it.
 - Fork this repo and create the necessary files for a Tipi app. Follow this [guide](https://www.runtipi.io/docs/contributing/adding-a-new-app)`
 
-## Apps available (267)
+## Apps available (269)
 
 | Name                                                                         | Description                                                                                                                                                         | Port  |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
@@ -82,6 +82,7 @@ If you want to see new apps on Tipi you can either:
 | [Emby](https://emby.media)                                                   | A media server for your home collection                                                                                                                             | 8325  |
 | [EMQX Open Source](https://github.com/emqx/emqx)                             | Scalable open-source MQTT broker.                                                                                                                                   | 18083 |
 | [Emulatorjs](https://github.com/EmulatorJS/EmulatorJS)                       | Self-hosted Javascript emulation for various system.                                                                                                                | 8164  |
+| [ErsatzTV](https://github.com/ErsatzTV/ErsatzTV)                             | Stream custom live channels using your own media.                                                                                                                   | 8409  |
 | [ESP Home](https://github.com/esphome/esphome)                               | Control your ESP8266/ESP32.                                                                                                                                         | 6052  |
 | [Excalidraw](https://github.com/excalidraw/excalidraw)                       | Online whiteboard collaboration made easy                                                                                                                           | 8172  |
 | [File Browser](https://github.com/filebrowser/filebrowser)                   | Access your homeserver files from your browser                                                                                                                      | 8096  |
@@ -251,6 +252,7 @@ If you want to see new apps on Tipi you can either:
 | [SimpleX SMP](https://github.com/simplex-chat/simplexmq)                     | A reference implementation of the SimpleX Messaging Protocol for simplex queues over public networks.                                                               | 5223  |
 | [SiYuan](https://github.com/siyuan-note/siyuan)                              | SiYuan is a privacy-first personal knowledge management system.                                                                                                     | 6806  |
 | [SLSKD](https://github.com/slskd/slskd)                                      | P2P downloads                                                                                                                                                       | 5030  |
+| [Smallweb](https://github.com/pomdtr/smallweb)                               | Your internet folder                                                                                                                                                | 7777  |
 | [Sonarr](https://github.com/Sonarr/Sonarr)                                   | TV show manager for Usenet and BitTorrent                                                                                                                           | 8098  |
 | [Spacedrive](https://github.com/spacedriveapp/spacedrive)                    | Cross-platform file explorer                                                                                                                                        | 9300  |
 | [Speedtest Tracker](https://github.com/alexjustesen/speedtest-tracker)       | Internet performance tracking application.                                                                                                                          | 8211  |
