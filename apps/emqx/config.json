@@ -4,6 +4,7 @@
   "port": 18083,
   "available": true,
   "exposable": true,
+  "dynamic_config":true,
   "id": "emqx",
   "tipi_version": 7,
   "version": "5.8.5",
